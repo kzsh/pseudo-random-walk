@@ -1,5 +1,3 @@
-// noprotect
-// jshint esnext:true
 const floor = Math.floor;
 
 const makePrng = function(seed) {
@@ -7,7 +5,7 @@ const makePrng = function(seed) {
     let currentValue = seed;
     let length = String(seed).length;
     let start = 0;
-    while(true) {
+    while (true) {
       let seedSquare = currentValue * currentValue;
       let middle = floor(String(seedSquare).length / 2);
       let start = middle - floor(length / 2);
@@ -20,10 +18,10 @@ const makePrng = function(seed) {
   };
 };
 
-const makeGetNumber = function (seed) {
+const makeGetNumber = function(seed) {
   let prng;
   return function getNumber() {
-    if(!prng) {
+    if (!prng) {
       prng = makePrng(seed)();
     }
     return prng.next().value;
@@ -33,21 +31,21 @@ const makeGetNumber = function (seed) {
 let getNumberForSeed121 = makeGetNumber(121);
 let getNumberForSeed512 = makeGetNumber(512);
 
-console.debug('begin getting numbers for seed 121');
-for(let x = 0; x < 10; x++) {
+console.debug("begin getting numbers for seed 121");
+for (let x = 0; x < 10; x++) {
   //log(getNumberForSeed121());
 }
 
-console.debug('begin getting numbers for seed 512');
-for(let x = 0; x < 10; x++) {
+console.debug("begin getting numbers for seed 512");
+for (let x = 0; x < 10; x++) {
   //log(getNumberForSeed512());
 }
 
 function log(message) {
   const messageNode = document.createTextNode(message);
-  const p = document.createElement('p');
-  p.appendChild(messageNode)
- document.body.appendChild(p);
+  const p = document.createElement("p");
+  p.appendChild(messageNode);
+  document.body.appendChild(p);
 }
 
 export default makeGetNumber;
