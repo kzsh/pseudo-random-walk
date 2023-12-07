@@ -15,6 +15,12 @@ export default function Home() {
   }, [ref])
 
   return (
-    <main ref={ref} className={styles.main} />
+    <main ref={ref} className={styles.main}>
+    <p className={styles.explanation}>
+      Random drawing using 3 different methods of RNG.  
+      After a moment, the seedable pattern will get stuck in 
+      a predictable loop and trail off, since it has no safeguards.
+    </p>
+    </main>
   )
 }

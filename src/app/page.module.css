@@ -3,3 +3,8 @@
   width: 100vw;
   height: 100vh;
 }
+
+.explanation {
+  max-width: 60%;
+  margin: 5%;
+}
