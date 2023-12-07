@@ -1,4 +1,5 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# pseudo-random-walk 
+Random drawing using 3 different methods of RNG.  After a moment, the seedable pattern will get stuck in a predictable loop and trail off, since it has no safeguards.
 
 ## Getting Started
 
